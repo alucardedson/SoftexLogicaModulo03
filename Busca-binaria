@@ -1,0 +1,32 @@
+//Para encontrar o número 20 no array, a busca binária é a solução mais eficiente
+
+function binarySearch(array, target) {
+    let left = 0;
+    let right = array.length - 1;
+  
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+  
+      if (array[mid] === target) {
+        return mid; // Retorna o índice onde o valor foi encontrado
+      } else if (array[mid] < target) {
+        left = mid + 1; // Busca na metade à direita
+      } else {
+        right = mid - 1; // Busca na metade à esquerda
+      }
+    }
+  
+    return -1; // Retorna -1 se o valor não for encontrado
+  }
+  
+  const array = [15, 8, 10, 25, 12, 30, 5, 20, 18, 7];
+  const target = 20;
+  
+  const index = binarySearch(array, target);
+  
+  if (index !== -1) {
+    console.log(`O valor ${target} foi encontrado no índice ${index}.`);
+  } else {
+    console.log(`O valor ${target} não foi encontrado no array.`);
+  }
+  
