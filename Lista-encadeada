@@ -1,0 +1,42 @@
+class Pessoa {
+    constructor(nome, idade) {
+      this.nome = nome;
+      this.idade = idade;
+      this.filho = null;
+    }
+  }
+  
+  class ListaEncadeadaPessoas {
+    constructor() {
+      this.primeiro = null;
+    }
+  
+    adicionarPessoa(nome, idade) {
+      const novaPessoa = new Pessoa(nome, idade);
+      if (this.primeiro === null) {
+        this.primeiro = novaPessoa;
+      } else {
+        let atual = this.primeiro;
+        while (atual.filho !== null) {
+          atual = atual.filho;
+        }
+        atual.filho = novaPessoa;
+      }
+    }
+  
+    imprimirLista() {
+      let atual = this.primeiro;
+      while (atual !== null) {
+        console.log(`Nome: ${atual.nome}, Idade: ${atual.idade}`);
+        atual = atual.filho;
+      }
+    }
+  }
+  
+  const listaPessoas = new ListaEncadeadaPessoas();
+  listaPessoas.adicionarPessoa("Maria", 30);
+  listaPessoas.adicionarPessoa("Edson", 25);
+  listaPessoas.adicionarPessoa("Carol", 40);
+  
+  listaPessoas.imprimirLista();
+  
