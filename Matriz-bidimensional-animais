@@ -1,0 +1,21 @@
+const animais = [
+    // [Nome, Espécie, Idade]
+    ['Rex', 'Cachorro', 3],
+    ['Miau', 'Gato', 8],
+    ['Loro', 'Papagaio', 7],
+    ['Totó', 'Cachorro', 1],
+    ['Pitchuca', 'Cachorro', 2],
+  ];
+  
+  // Loop para imprimir todas as informações dos animais
+  for (let i = 0; i < animais.length; i++) {
+    const nomeAnimal = animais[i][0];
+    const especieAnimal = animais[i][1];
+    const idadeAnimal = animais[i][2];
+  
+    console.log('Animal ' + (i + 1) + ':');
+    console.log('Nome: ' + nomeAnimal);
+    console.log('Espécie: ' + especieAnimal);
+    console.log('Idade: ' + idadeAnimal);
+    console.log(''); //linha vazia para separar os animais na saída
+  }
